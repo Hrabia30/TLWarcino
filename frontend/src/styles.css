@@ -1,0 +1,293 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #132238;
+  background:
+    radial-gradient(circle at top left, rgba(255, 193, 107, 0.55), transparent 28%),
+    linear-gradient(135deg, #f4efe5 0%, #d9ecff 45%, #f7fbff 100%);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+  padding: 0.9rem 1.1rem;
+  background: #12355b;
+  color: #fff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(18, 53, 91, 0.16);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.auth-page {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-page {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.hero-card,
+.auth-card,
+.card,
+.stat-card {
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(18, 53, 91, 0.12);
+}
+
+.hero-card {
+  padding: 48px;
+}
+
+.auth-card,
+.card {
+  padding: 28px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: #a14d11;
+  margin-bottom: 8px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 0.95;
+  margin-bottom: 18px;
+}
+
+.hero-copy,
+.subtle,
+.hint {
+  color: #49617d;
+}
+
+.hero-pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.hero-pills span,
+.status-pill {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.hero-pills span {
+  background: rgba(18, 53, 91, 0.08);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background: #dfeaf7;
+  color: #12355b;
+}
+
+.tabs .active {
+  background: #12355b;
+  color: white;
+}
+
+.stack {
+  display: grid;
+  gap: 14px;
+}
+
+.split {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ghost {
+  background: rgba(255, 255, 255, 0.8);
+  color: #12355b;
+}
+
+.stats-grid,
+.content-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  padding: 20px 24px;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+.content-grid {
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: start;
+}
+
+.card-head {
+  margin-bottom: 18px;
+}
+
+.ticket-list {
+  display: grid;
+  gap: 14px;
+}
+
+.ticket-card {
+  padding: 18px;
+  background: rgba(244, 249, 255, 0.9);
+  border-radius: 22px;
+  border: 1px solid rgba(18, 53, 91, 0.08);
+}
+
+.ticket-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.actions {
+  margin-top: 16px;
+}
+
+.notice {
+  padding: 12px 16px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+.notice.success {
+  background: rgba(84, 166, 116, 0.14);
+  color: #1f6e3e;
+}
+
+.notice.error {
+  background: rgba(214, 79, 79, 0.14);
+  color: #942727;
+}
+
+.empty-state {
+  padding: 30px;
+  text-align: center;
+  color: #49617d;
+  background: rgba(244, 249, 255, 0.9);
+  border-radius: 22px;
+}
+
+.status-pill {
+  background: rgba(18, 53, 91, 0.08);
+}
+
+.status-pill.new {
+  background: rgba(238, 176, 72, 0.18);
+}
+
+.status-pill.in_progress {
+  background: rgba(90, 130, 246, 0.18);
+}
+
+.status-pill.resolved {
+  background: rgba(84, 166, 116, 0.18);
+}
+
+@media (max-width: 960px) {
+  .auth-page,
+  .content-grid,
+  .stats-grid,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    padding: 32px;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .topbar,
+  .ticket-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: awarie-db
+    environment:
+      POSTGRES_DB: awarie
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+    container_name: awarie-backend
+    depends_on:
+      - db
+    environment:
+      PORT: 4000
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/awarie
+      JWT_SECRET: super_secret_it_key
+      FRONTEND_URL: http://localhost:5173
+      SEED_IT_EMAIL: it@firma.local
+      SEED_IT_PASSWORD: Admin123!
+    ports:
+      - "4000:4000"
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: awarie-frontend
+    depends_on:
+      - backend
+    environment:
+      VITE_API_URL: http://localhost:4000
+    ports:
+      - "5173:5173"
+
+volumes:
+  postgres_data:

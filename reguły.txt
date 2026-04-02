@@ -1,0 +1,2 @@
+nigdy nie zapisuje nic na urządzeniach
+ssh zawsze read only 
