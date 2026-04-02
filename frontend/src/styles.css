@@ -18,6 +18,10 @@ body {
   min-height: 100vh;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 button,
 input,
 select,
@@ -51,8 +55,27 @@ textarea {
 }
 
 .page {
-  min-height: 100vh;
   padding: 24px;
+  width: 100%;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-footer {
+  width: min(1300px, calc(100% - 48px));
+  margin: 0 auto 24px;
+  padding: 14px 22px;
+  text-align: center;
+  color: #49617d;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(18, 53, 91, 0.08);
 }
 
 .auth-page {
